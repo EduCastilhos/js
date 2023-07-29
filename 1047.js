@@ -7,28 +7,20 @@ var hi = parseInt(line[0]);
 var mi = parseInt(line[1]);
 var hf = parseInt(line[2]);
 var mf = parseInt(line[3]);
-var hr;
-var min;
+var hr = hf - hi;
+var min = mf - mi;
 
-// horas
-if (hi < hf){
-    hr = hf - hi;
-} else if (hf < hi){
-    hr = (24 - (hi - hf));
-} else{
-    hr = 24;
+if (hr < 0){
+    hr = 24 + hr;
 }
 
-// minutos
-if (mi < mf){
-    min = mf - mi;
-} else if (mf < mi){
-    min = (60 - mi) + mf;
-    if (hi < hf){
-        hr -= 1;
-    }
-} else{
-    min = 0;
+if (min < 0){
+    min = 60 + min;
+    hr--;
 }
 
-console.log('O JOGO DUROU ' + hr + ' HORA(S) E ' + min + ' MINUTO(S)');
+if (hi == hf && mi == mf){
+    console.log('O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)');
+} else{
+    console.log('O JOGO DUROU ' + hr + ' HORA(S) E ' + min + ' MINUTO(S)');
+}
