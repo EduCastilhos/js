@@ -27,4 +27,4 @@ do {
 console.log(pares + ' valor(es) par(es)');
 console.log(impares + ' valor(es) impar(es)');
 console.log(positivos + ' valor(es) positivo(s)');
-console.log(negativos + ' valor(es) negativos(s)');
+console.log(negativos + ' valor(es) negativo(s)');
